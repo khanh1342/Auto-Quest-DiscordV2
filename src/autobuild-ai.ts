@@ -1,7 +1,7 @@
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
 
 const OPENAI_URL = 'https://api.openai.com/v1/responses';
-const HOST = process.env.AUTOBUILD_HOST || '127.0.0.1';
+const HOST = process.env.AUTOBUILD_HOST || '0.0.0.0';
 const PORT = Number.parseInt(process.env.AUTOBUILD_PORT || '8787', 10);
 const MODEL = process.env.AUTOBUILD_OPENAI_MODEL || 'gpt-5';
 const MAX_BODY = 64 * 1024;
