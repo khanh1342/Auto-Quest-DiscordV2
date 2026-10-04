@@ -1,10 +1,14 @@
 import { GatewayDispatchEvents } from 'discord-api-types/v10';
 import { ClientQuest } from './src/client';
 import { Utils } from './src/utils';
+import { startAutoBuildAiService } from './src/autobuild-ai';
 
 let currentUserId: string | null = null;
 
 const client = new ClientQuest(process.env.TOKEN!);
+
+// AutoBuild AI service uses OPENAI_API_KEY from this bot process/.env.
+startAutoBuildAiService();
 
 /*
 client.on(
