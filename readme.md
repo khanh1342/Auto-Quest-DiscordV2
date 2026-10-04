@@ -143,3 +143,21 @@ Quest "Alloyed Collective Gupdoption" completed!
 * [discord.js](https://github.com/discordjs/discord.js)
 
 *README compiled with assistance from AI.*
+
+
+## AutoBuild AI Service
+
+The bot can provide the AI backend used by the AutoBuild Minecraft client.
+
+Add the OpenAI key to the bot's local `.env`:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+The bot exposes these local endpoints:
+
+- `GET /autobuild/status` — reports whether `OPENAI_API_KEY` is available.
+- `POST /autobuild/decision` — performs the AutoBuild AI request using the key from the bot process.
+
+By default the service listens only on `127.0.0.1:8787`, so the API key is never sent to the Minecraft client. Keep it local unless you deliberately configure network access.
